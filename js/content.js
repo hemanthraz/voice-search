@@ -12,13 +12,13 @@ var currentVolume  = 3;
 var higlightedImg;
 
 msg.onstart = function(event) {
-  //stopVoice();
+  stopVoice();
   $('#speaker').fadeIn(200);
   higlightedImg.addClass("highlight");
 }
 
 msg.onend = function(event) {
-  //startVoice();
+  startVoice();
   $('#speaker').fadeOut(200);
   higlightedImg.removeClass("highlight");
 }
@@ -92,13 +92,13 @@ function previousStep() {
   if (currentStep == 0 ) {
     return;
   }
-  currentStep = parseInt(currentStep) - 1;
+  currentStep = currentStep -1;
   readStep(currentStep);
 }
 
 function nextStep() {
   console.log(arguments.callee.name + currentStep);
-  currentStep = parseInt(currentStep) + 1;
+  currentStep = currentStep + 1;
   readStep(currentStep);
 }
 

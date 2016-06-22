@@ -1,0 +1,45 @@
+{
+  "manifest_version": 2,
+  "name": "Voice",
+  "version": "1.0",
+  "description": "Navigate Rakuten services with your voice",
+  "icons": {
+    "48": "img/logo_48.png",
+    "128": "img/logo_128.png" 
+  },
+  "browser_action": {
+    "default_icon": {                    
+      "19": "img/logo_19.png"
+    },
+    "default_title": "Voice Navigation"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "audio",
+    "http://recipe.rakuten.co.jp/*/*",
+    "https://*/*"
+   ],
+  "background" : {
+    "scripts" : [
+      "js/background.js"
+    ]
+  },    
+  "web_accessible_resources": [
+        "css/flat.css",
+        "img/speaker.png"
+  ],
+  "content_scripts": [{
+    "matches": [
+      "http://recipe.rakuten.co.jp/*"
+    ],
+   "js": [
+      "js/annyang.min.js",
+      "js/speechkitt.min.js",
+      "js/jquery-2.2.4.min.js",
+      "js/content.js"
+      ]
+  }]
+
+
+}

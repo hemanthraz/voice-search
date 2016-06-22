@@ -1,0 +1,1 @@
+document.getElementById("skitt-ui").style.visibility = "visible";
